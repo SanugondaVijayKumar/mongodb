@@ -1,0 +1,32 @@
+{
+  "name": "expensetracker_backend",
+  "version": "1.0.0",
+  "description": "server for expense tracker app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "debug": "ndb app.js"
+  },
+  "author": "vijay kumar",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1305.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^5.1.0",
+    "mongoose": "^7.0.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.0.1",
+    "nodemon": "^3.0.1",
+    "path": "^0.12.7",
+    "razorpay": "^2.8.4",
+    "sequelize": "^6.28.0",
+    "sib-api-v3-sdk": "^8.5.0",
+    "uuid": "^9.0.0"
+  }
+}
