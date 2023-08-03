@@ -2,10 +2,10 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose=require('mongoose');
 
 const errorController = require('./controllers/error');
-const mongoConnect=require('./util/database').mongoConnect;
-const User=require('./models/user');
+// const User=require('./models/user');
 
 const app = express();
 
@@ -18,20 +18,24 @@ const shopRoutes = require('./routes/shop');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((req, res, next) => {
-  User.findById("64ca28fedf369963f2f288fc")
-    .then(user => {
-      req.user = new User(user.name,user.email,user.cart,user._id);
-      next();
-    })
-    .catch(err => console.log(err));
-});
+// app.use((req, res, next) => {
+//   User.findById("64ca28fedf369963f2f288fc")
+//     .then(user => {
+//       req.user = new User(user.name,user.email,user.cart,user._id);
+//       next();
+//     })
+//     .catch(err => console.log(err));
+// });
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-mongoConnect(()=>{
-  app.listen(3000);
-});
+mongoose.connect('mongodb+srv://vijaysanugonda:3b0U8J6BVJoyyqpu@cluster0.ho2bocm.mongodb.net/shop?retryWrites=true&w=majority').then(result=>{
+  app.listen(3000,()=>{
+    console.log('server is running on 3000');
+  });
+}).catch(err=>{
+  console.log(err);
+})
