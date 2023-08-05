@@ -1,5 +1,5 @@
-// const Expense = require("../models/expenseModel");
-const User = require("../models/userModel");
+// const Expense = require("../models/expense");
+const User = require("../models/user");
 // const sequelize = require("../util/database");
 
 exports.showleaderboard = async (req, res) => {

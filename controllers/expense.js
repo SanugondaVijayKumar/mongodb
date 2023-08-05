@@ -1,7 +1,7 @@
-const Expense = require("../models/expenseModel");
-const User = require("../models/userModel");
+const Expense = require("../models/expense");
+const User = require("../models/user");
 const S3service = require("../services/s3Service");
-const Download = require("../models/downloadModel");
+const Download = require("../models/download");
 
 exports.getAllExpenses = async (req, res) => {
   try {

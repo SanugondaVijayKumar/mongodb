@@ -1,5 +1,5 @@
 const Razorpay = require("razorpay");
-const Order = require("../models/orderModel");
+const Order = require("../models/order");
 
 exports.getPremiumMemebership = async (req, res, next) => {
   try {

@@ -1,11 +1,11 @@
-const User = require("../models/userModel");
+const User = require("../models/user");
 const Sib = require("sib-api-v3-sdk");
-const forgotPasswrdMdl = require("../models/forgotPasswordModel");
+const forgotPasswrdMdl = require("../models/forgot-password");
 const { v4: uuidv4 } = require("uuid");
 const bcrypt = require("bcrypt");
 
-const URL = `http://35.78.245.211`;
-// const URL = `http://localhost`;
+// const URL = `http://35.78.245.211`;
+const URL = `http://localhost`;
 
 exports.resetPasswordLink = async (req, res) => {
   try {

@@ -12,11 +12,11 @@ const path = require("path");
 const fs = require("fs");
 
 //Routes
-const expenseRouter = require("./routes/expenseRoutes");
-const purchaseRouter = require("./routes/purchaseRoutes");
-const userRouter = require("./routes/userRoutes");
-const premiumRouter = require("./routes/premiumRoutes");
-const passwordResetRouter = require("./routes/passwordResetRoutes");
+const expenseRouter = require("./routes/expense");
+const purchaseRouter = require("./routes/purchase");
+const userRouter = require("./routes/user");
+const premiumRouter = require("./routes/premium");
+const passwordResetRouter = require("./routes/password-reset");
 
 //Database and HTTPS middleware
 // const sequelize = require("./util/database");
@@ -25,11 +25,11 @@ const cors = require("cors");
 //Starting app
 const app = express();
 //Models
-// const User = require("./models/userModel");
-// const Expense = require("./models/expenseModel");
-// const Order = require("./models/orderModel");
-// const Download = require("./models/downloadModel");
-// const forgotPassword = require("./models/forgotPasswordModel");
+// const User = require("./models/user");
+// const Expense = require("./models/expense");
+// const Order = require("./models/order");
+// const Download = require("./models/download");
+// const forgotPassword = require("./models/forgot-password");
 
 const accessStreamLog = fs.createWriteStream(
   path.join(__dirname, "access.log"),
